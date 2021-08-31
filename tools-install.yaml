@@ -14,3 +14,4 @@
           - binfmt-support
           - dosfstools
           - systemd-container
+          - wget
