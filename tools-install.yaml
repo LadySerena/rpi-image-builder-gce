@@ -1,0 +1,16 @@
+- name: install needed packages
+  hosts: all
+  become: true
+  tasks:
+    - name: install tools
+      register: apt_status
+      until: apt_status is success
+      delay: 6
+      retries: 10
+      apt:
+        pkg:
+          - qemu
+          - qemu-user-static
+          - binfmt-support
+          - dosfstools
+          - systemd-container

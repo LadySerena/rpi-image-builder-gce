@@ -1,0 +1,21 @@
+### sops template
+secrets/decrypted/*
+!secrets/decrypted/.gitkeep
+### Packer template
+# Cache objects
+packer_cache/
+
+# Crash log
+crash.log
+
+# For built boxes
+*.box
+
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
