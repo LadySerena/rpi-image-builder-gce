@@ -1,5 +1,9 @@
 steps:
   - name: hashicorp/packer:1.7.4
     args:
+      - "init"
+      - "."
+  - name: hashicorp/packer:1.7.4
+    args:
       - "validate"
       - "."
