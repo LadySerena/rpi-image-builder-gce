@@ -11,13 +11,19 @@
         pkg:
           - qemu
           - qemu-user-static
+          - qemu-utils
           - binfmt-support
           - qemu-user-static
           - dosfstools
           - systemd-container
           - wget
-          - chroot
+          - binutils
+          - debootstrap
           - git
+          - util-linux
+          - fdisk
+          - e2fsprogs
+          - parted
     - name: install hashicorp apt key
       apt_key:
         url: https://apt.releases.hashicorp.com/gpg
