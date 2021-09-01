@@ -1,4 +1,9 @@
 steps:
+  - name: quay.io/ansible/ansible-runner:stable-2.9-latest
+    entrypoint: ansible-playbook
+    args:
+      - "--syntax-check"
+      - "tools-install.yaml"
   - name: hashicorp/packer:1.7.4
     args:
       - "init"
