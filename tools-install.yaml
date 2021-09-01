@@ -12,6 +12,36 @@
           - qemu
           - qemu-user-static
           - binfmt-support
+          - qemu-user-static
           - dosfstools
           - systemd-container
           - wget
+          - chroot
+          - git
+    - name: install hashicorp apt key
+      apt_key:
+        url: https://apt.releases.hashicorp.com/gpg
+        state: present
+    - name: install hashicorp apt repo
+      apt_repository:
+        repo: deb https://apt.releases.hashicorp.com buster hashicorp
+        codename: buster
+        update_cache: yes
+    - name: install packer
+      register: packer_status
+      until: packer_status is success
+      delay: 6
+      retries: 10
+      apt:
+        name: packer
+    - name: create plugin directory
+      file:
+        path: /home/serena/packer-arm
+        state: directory
+        mode: '0755'
+    - name: clone packer plugin repo
+      git:
+        repo: https://github.com/mkaczanowski/packer-builder-arm
+        dest: /home/serena/packer-arm
+        version: d4cf21a2313c41d9d7d02a1a58986fa00cec7f1a
+        refspec: HEAD
