@@ -1,6 +1,6 @@
 source "googlecompute" "pi-image-builder" {
   project_id = "telvanni-platform"
-  source_image_family = "tel-base-debian-10"
+  source_image_family = "tel-base-debian-11"
   zone = "us-central1-a"
   image_name = "rpi-builder-${var.tag_name}"
   image_description = "machine image that has the tools needed to build raspberry pi images"
