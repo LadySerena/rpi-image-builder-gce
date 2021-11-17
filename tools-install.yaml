@@ -24,6 +24,7 @@
           - fdisk
           - e2fsprogs
           - parted
+          - go
     - name: install hashicorp apt key
       apt_key:
         url: https://apt.releases.hashicorp.com/gpg
