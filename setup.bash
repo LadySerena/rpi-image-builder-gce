@@ -18,5 +18,6 @@ md5sum --check ArchLinuxARM-rpi-aarch64-latest.tar.gz.md5
 sudo tar -xpf "ArchLinuxARM-rpi-aarch64-latest.tar.gz" -C /mnt
 sudo mv /mnt/etc/resolv.conf /mnt/etc/resolv.conf.bak
 sudo cp /etc/resolv.conf /mnt/etc/resolv.conf
+sudo cp ./install.bash /mnt/install.bash
 
 sudo systemd-nspawn -D /mnt /install.bash
