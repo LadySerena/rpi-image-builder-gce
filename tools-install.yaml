@@ -52,3 +52,15 @@
         dest: /home/serena/packer-arm
         version: d4cf21a2313c41d9d7d02a1a58986fa00cec7f1a
         refspec: HEAD
+    - name: move scripts
+      copy:
+        src: '/tmp/compress.bash'
+        dest: '/home/serena/compress.bash'
+    - name: move scripts
+      copy:
+        src: '/tmp/install.bash'
+        dest: '/home/serena/install.bash'
+    - name: move scripts
+      copy:
+        src: '/tmp/setup.bash'
+        dest: '/home/serena/setup.bash'
