@@ -17,6 +17,21 @@ build {
   sources = [
     "source.googlecompute.pi-image-builder"]
 
+  provisioner "file" {
+    destination = "/tmp/compress.bash"
+    source = "./compress.bash"
+  }
+
+  provisioner "file" {
+    destination = "/tmp/install.bash"
+    source = "./install.bash"
+  }
+
+  provisioner "file" {
+    destination = "/tmp/setup.bash"
+    source = "./setup.bash"
+  }
+
   provisioner "ansible-local" {
     extra_arguments = [
       "--extra-vars",
