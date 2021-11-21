@@ -11,7 +11,7 @@ sudo umount /mnt/boot
 sudo umount /mnt
 sudo losetup --detach "/dev/loop0"
 
-mv "custom-pi.img.xz" "$image_name"
+mv "custom-pi.img" "$image_name"
 
 xz -z -k -9 -e -T 0 -v "$image_name"
 
